@@ -1,0 +1,56 @@
+/*!
+Theme Name: Online Exhibition
+Author: Patrick Ward
+Description: A WordPress theme for online exhibitions.
+Version: 1.0.0
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Base
+# Helpers
+# Components
+# Modules
+# Pages
+# Vendors
+
+---------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import 'Base/normalize';
+@import 'Base/colors';
+@import 'Base/typography';
+
+/*---------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+@import 'Helpers/mixins';
+@import 'Helpers/clearfix';
+@import 'Helpers/utilities';
+@import 'Helpers/object-fit-polyfill';
+
+/*--------------------------------------------------------------
+# Vendors
+--------------------------------------------------------------*/
+// For third party libraries, create a Vendor folder and import
+// it's styles here.
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import 'Components/grid';
+@import 'Components/buttons';
+@import 'Components/header';
+@import 'Components/footer';
+@import 'Components/container';
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+// If styles for specific pages required, created Pages folder
+// and import the files here.
