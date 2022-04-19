@@ -1,0 +1,48 @@
+.ma-site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: initial;
+  padding: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1rem 2rem;
+  }
+
+  a {
+    color: inherit;
+    line-height: initial;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ma-site-title {
+  font-size: 2rem;
+  margin: 0;
+  line-height: normal;
+
+  span {
+    font-size: inherit;
+  }
+}
+
+.ma-site-nav {
+  align-self: flex-end;
+  margin-left: auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 2rem;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}

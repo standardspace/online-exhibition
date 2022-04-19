@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="ma-container">
 
 <h1 class="page-title"><?php echo single_term_title(); ?></h1>  
 

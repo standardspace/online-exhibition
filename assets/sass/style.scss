@@ -25,6 +25,7 @@ Version: 1.0.0
 /*---------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
+@import 'Helpers/acccessibility';
 @import 'Helpers/mixins';
 @import 'Helpers/clearfix';
 @import 'Helpers/utilities';
@@ -44,6 +45,7 @@ Version: 1.0.0
 @import 'Components/header';
 @import 'Components/footer';
 @import 'Components/container';
+@import 'Components/ma-gallery';
 
 /*--------------------------------------------------------------
 # Blocks

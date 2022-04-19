@@ -24,6 +24,16 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<header class="ma-site-header">
+    <h1 class="ma-site-title"><a href="<?php echo home_url() ?>"><?php bloginfo( 'name' ); ?></a></h1>
+    <nav class="ma-site-nav">
+        <ul>
+            <li><a href="/artists/">Artists</a></li>
+            <li><a href="/artworks/">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
 
 
 

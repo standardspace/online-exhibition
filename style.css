@@ -397,6 +397,17 @@ h4 {
 /*---------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0; }
+
 /**
  * Add your custom mixins here.
  */
@@ -3658,39 +3669,87 @@ html {
   .mx-xl-auto {
     margin-left: auto !important; } }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
+.ma-container {
+  margin: 0 1rem;
   position: relative;
-  padding: 0;
-  max-width: 90%; }
+  padding: 0; }
   @media (min-width: 992px) {
-    .container {
-      max-width: 90rem; } }
-  
-  .container-fluid,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl {
-    max-width: none;
-    width: auto;
-    position: relative;
-    padding: 0; }
-  .container-narrow {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    max-width: 90%; }
-    @media (min-width: 992px) {
-      .container-narrow {
-        width: 80%;
-        max-width: 60rem; } }
+    .ma-container {
+      max-width: 90rem;
+      margin: 0 2rem; } }
+
+.ma-site-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: initial;
+  padding: 1rem; }
+  @media (min-width: 992px) {
+    .ma-site-header {
+      padding: 1rem 2rem; } }
+  .ma-site-header a {
+    color: inherit;
+    line-height: initial; }
+    .ma-site-header a:hover, .ma-site-header a:focus {
+      text-decoration: underline; }
+
+.ma-site-title {
+  font-size: 2rem;
+  margin: 0;
+  line-height: normal; }
+  .ma-site-title span {
+    font-size: inherit; }
+
+.ma-site-nav {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto; }
+  .ma-site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .ma-site-nav li {
+    font-size: 2rem;
+    display: inline-block;
+    margin-left: 1rem; }
 
 .container img {
   max-width: 100%;
   height: auto; }
+
+.ma-gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw; }
+  @media (min-width: 576px) {
+    .ma-gallery {
+      margin: 1rem; } }
+  @media (min-width: 768px) {
+    .ma-gallery {
+      margin: 1rem; } }
+  @media (min-width: 992px) {
+    .ma-gallery {
+      margin: 2rem; } }
+
+.ma-gallery__item {
+  max-width: 100%; }
+  .ma-gallery__item img {
+    max-width: 100%;
+    height: auto; }
+
+.ma-gallery__item__title a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 /*--------------------------------------------------------------
 # Blocks
