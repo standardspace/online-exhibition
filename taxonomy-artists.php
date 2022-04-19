@@ -7,15 +7,21 @@
 <?php 
 $term = get_queried_object();
 $image = get_field('portrait', $term->taxonomy . '_' . $term->term_id);
-$size = 'large'; // (thumbnail, medium, large, full or custom size)
 if( $image ) {
-    echo wp_get_attachment_image( $image, $size );
+    echo wp_get_attachment_image( $image, 'medium' );
 }
 
 $description = get_field('biography', $term->taxonomy . '_' . $term->term_id);
 if ($description) {
     echo $description;
 } 
+
+// Featured artwork
+$featuredArtwork = get_field('featured_artwork', $term->taxonomy . '_' . $term->term_id);
+
+if ( $featuredArtwork ) {
+	echo get_the_post_thumbnail($featuredArtwork, 'medium' );
+}
 ?>
 
 
