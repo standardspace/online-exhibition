@@ -3762,9 +3762,12 @@ html {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   margin-bottom: 1rem; }
+  @media (min-width: 576px) {
+    .ma-artists-list__item {
+      aspect-ratio: 1.5 / 1; } }
   @media (min-width: 768px) {
     .ma-artists-list__item {
-      aspect-ratio: 2.5 / 1; } }
+      aspect-ratio: 3 / 1; } }
 
 .ma-artists-list__item__title {
   position: absolute;
@@ -3775,11 +3778,15 @@ html {
   font-size: 1.5rem;
   max-width: calc(100% - 150px - 2rem);
   z-index: 1; }
+  @media (min-width: 576px) {
+    .ma-artists-list__item__title {
+      font-size: 2rem;
+      top: calc(100% / 3 * 2 + 2rem); } }
   @media (min-width: 768px) {
     .ma-artists-list__item__title {
-      top: calc(100% / 5 * 3 + 2rem);
+      top: 1rem;
       bottom: auto;
-      left: calc(200px + 2rem);
+      left: calc(50% + 1rem);
       max-width: none; } }
   .ma-artists-list__item__title a {
     font-size: inherit;
@@ -3793,9 +3800,14 @@ html {
   aspect-ratio: 3 / 2;
   border-bottom: 4px solid #fff;
   font-size: 0; }
+  @media (min-width: 576px) {
+    .ma-artists-list__item__featured-artwork {
+      aspect-ratio: 2 / 1; } }
   @media (min-width: 768px) {
     .ma-artists-list__item__featured-artwork {
-      aspect-ratio: 4 / 1; } }
+      width: 50%;
+      right: auto;
+      aspect-ratio: 1.5 / 1; } }
   .ma-artists-list__item__featured-artwork img {
     width: 100%;
     height: 100%;
@@ -3815,13 +3827,17 @@ html {
   border-radius: 50%;
   border: 4px solid #fff;
   overflow: hidden; }
+  @media (min-width: 576px) {
+    .ma-artists-list__item__portrait {
+      top: calc(100% / 3 * 2 + 2rem); } }
   @media (min-width: 768px) {
     .ma-artists-list__item__portrait {
-      width: 200px;
-      height: 200px;
-      top: calc(100% / 5 * 3 + 1rem);
-      right: auto;
-      left: 1rem; } }
+      top: auto;
+      bottom: 1rem;
+      right: 1rem;
+      left: auto;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); } }
   .ma-artists-list__item__portrait img {
     width: 100%;
     height: 100%;
