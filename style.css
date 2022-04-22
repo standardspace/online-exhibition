@@ -3677,6 +3677,9 @@ html {
     .ma-container {
       max-width: 90rem;
       margin: 0 2rem; } }
+  @media (min-width: 1200px) {
+    .ma-container {
+      margin: 0 auto; } }
 
 .ma-site-header {
   display: -webkit-box;
@@ -3767,7 +3770,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #efefef;
+  background-color: #212121;
+  color: #fff;
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -3782,6 +3786,17 @@ html {
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row; } }
+  .ma-artists-list__item:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    margin: -20px;
+    width: 40px;
+    height: 40px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background-color: #fff;
+    /* to see where it is */ }
 
 .ma-artists-list__item__title {
   -webkit-box-ordinal-group: 2;
@@ -3816,7 +3831,7 @@ html {
 .ma-artists-list__item__featured-artwork {
   width: 100%;
   height: 75%;
-  border-bottom: 4px solid #fff;
+  border-bottom: 4px solid #a2a2a2;
   background: #fff; }
   @media (min-width: 992px) {
     .ma-artists-list__item__featured-artwork {
@@ -3842,7 +3857,7 @@ html {
   border-radius: 50%; }
   .ma-artists-list__item__portrait::after {
     content: '';
-    background-color: #fff;
+    background-color: #a2a2a2;
     position: absolute;
     display: block;
     width: 158px;
@@ -3850,7 +3865,7 @@ html {
     left: -4px;
     margin-right: -50px;
     height: 79px;
-    border-radius: 76px 76px 0 0;
+    border-radius: 79px 79px 0 0;
     z-index: -1; }
   @media (min-width: 768px) {
     .ma-artists-list__item__portrait {
@@ -3863,7 +3878,7 @@ html {
       bottom: 2rem;
       -webkit-transform: translateY(0);
               transform: translateY(0);
-      border: 4px solid #fff; }
+      border: 4px solid #a2a2a2; }
       .ma-artists-list__item__portrait::after {
         content: none; } }
   @media (min-width: 1200px) {

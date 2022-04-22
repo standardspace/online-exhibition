@@ -10,4 +10,8 @@
 				max-width: 90rem;
 				margin: 0 2rem;
   	}
+
+		@include media-breakpoint-up(xl) {
+				margin: 0 auto;
+  	}
 }
