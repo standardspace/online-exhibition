@@ -3753,27 +3753,41 @@ html {
     bottom: 0;
     left: 0; }
 
+.ma-artists-list {
+  padding-top: 2rem; }
+  @media (min-width: 768px) {
+    .ma-artists-list {
+      padding-top: 3rem; } }
+
 .ma-artists-list__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #efefef;
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   margin-bottom: 1rem; }
-  @media (min-width: 576px) {
-    .ma-artists-list__item {
-      aspect-ratio: 1.5 / 1; } }
   @media (min-width: 768px) {
     .ma-artists-list__item {
-      aspect-ratio: 3 / 1; } }
+      aspect-ratio: 2 / 1; } }
+  @media (min-width: 992px) {
+    .ma-artists-list__item {
+      aspect-ratio: 3 / 1;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
 .ma-artists-list__item__title {
-  position: absolute;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   margin: 0;
-  top: calc(100% / 3 * 2 + 1rem);
-  left: 1rem;
   padding: 0.25rem 0.5rem;
   font-size: 1.5rem;
   max-width: calc(100% - 150px - 2rem);
@@ -3784,30 +3798,31 @@ html {
       top: calc(100% / 3 * 2 + 2rem); } }
   @media (min-width: 768px) {
     .ma-artists-list__item__title {
-      top: 1rem;
-      bottom: auto;
-      left: calc(50% + 1rem);
       max-width: none; } }
+  @media (min-width: 992px) {
+    .ma-artists-list__item__title {
+      margin: 1rem; } }
   .ma-artists-list__item__title a {
     font-size: inherit;
     color: inherit; }
+    .ma-artists-list__item__title a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
 
 .ma-artists-list__item__featured-artwork {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  aspect-ratio: 3 / 2;
+  width: 100%;
+  height: 75%;
   border-bottom: 4px solid #fff;
-  font-size: 0; }
-  @media (min-width: 576px) {
-    .ma-artists-list__item__featured-artwork {
-      aspect-ratio: 2 / 1; } }
-  @media (min-width: 768px) {
+  background: #fff; }
+  @media (min-width: 992px) {
     .ma-artists-list__item__featured-artwork {
       width: 50%;
-      right: auto;
-      aspect-ratio: 1.5 / 1; } }
+      height: 100%;
+      border-bottom: none; } }
   .ma-artists-list__item__featured-artwork img {
     width: 100%;
     height: 100%;
@@ -3818,33 +3833,51 @@ html {
 
 .ma-artists-list__item__portrait {
   position: absolute;
-  top: calc(100% / 3 * 2);
+  top: 75%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 1rem;
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  overflow: hidden; }
-  @media (min-width: 576px) {
-    .ma-artists-list__item__portrait {
-      top: calc(100% / 3 * 2 + 2rem); } }
+  border-radius: 50%; }
+  .ma-artists-list__item__portrait::after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    display: block;
+    width: 158px;
+    top: -4px;
+    left: -4px;
+    margin-right: -50px;
+    height: 79px;
+    border-radius: 76px 76px 0 0;
+    z-index: -1; }
   @media (min-width: 768px) {
     .ma-artists-list__item__portrait {
+      top: 75%; } }
+  @media (min-width: 992px) {
+    .ma-artists-list__item__portrait {
       top: auto;
-      bottom: 1rem;
-      right: 1rem;
       left: auto;
+      right: 2rem;
+      bottom: 2rem;
       -webkit-transform: translateY(0);
-              transform: translateY(0); } }
+              transform: translateY(0);
+      border: 4px solid #fff; }
+      .ma-artists-list__item__portrait::after {
+        content: none; } }
+  @media (min-width: 1200px) {
+    .ma-artists-list__item__portrait {
+      width: 200px;
+      height: 200px; } }
   .ma-artists-list__item__portrait img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: center center;
-       object-position: center center; }
+       object-position: center center;
+    border-radius: 50%; }
 
 /*--------------------------------------------------------------
 # Blocks
