@@ -1,32 +1,47 @@
 <?php get_header(); ?>
 
-<div class="ma-container">
+<div class="ma-container ma-artist-page">
 
 <h1 class="page-title"><?php echo single_term_title(); ?></h1>  
 
-<?php 
-$term = get_queried_object();
-$image = get_field('portrait', $term->taxonomy . '_' . $term->term_id);
-if( $image ) {
-    echo wp_get_attachment_image( $image, 'medium' );
-}
+<div class="ma-artist-page__details">
 
-$description = get_field('biography', $term->taxonomy . '_' . $term->term_id);
-if ($description) {
-    echo $description;
-} 
+	<?php 
+		$term = get_queried_object();
+		$image = get_field('portrait', $term->taxonomy . '_' . $term->term_id);
+		if( $image ) :
+	?>
+	<div class="ma-artist-page__portrait">
+		<?php  echo wp_get_attachment_image( $image, 'large' ); ?>
+	</div>
+	<?php endif; ?>
 
-// Featured artwork
-$featuredArtwork = get_field('featured_artwork', $term->taxonomy . '_' . $term->term_id);
+	<?php 
+		$description = get_field('biography', $term->taxonomy . '_' . $term->term_id);
+		if ($description) {
+				echo '<div class="ma-artist-page__bio">';
+				echo $description;
+				echo '</div>';
+		} 
 
-if ( $featuredArtwork ) {
-	echo get_the_post_thumbnail($featuredArtwork, 'medium' );
-}
-?>
+		// Featured artwork
+		// $featuredArtwork = get_field('featured_artwork', $term->taxonomy . '_' . $term->term_id);
+
+		// if ( $featuredArtwork ) {
+		// 	echo get_the_post_thumbnail($featuredArtwork, 'medium' );
+		// }
+	?>
+
+</div>
 
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <h2>Artworks by <?php echo single_term_title(); ?></h2>
+
+
+
+	<?php if ( have_posts() ) : ?>
+		<h2>Artworks by <?php echo single_term_title(); ?></h2>
+		<?php while ( have_posts() ) : the_post(); ?>
+    
 		<section>
 			<h3> <?php the_title(); ?></h3>
       <?php the_post_thumbnail('medium'); ?>

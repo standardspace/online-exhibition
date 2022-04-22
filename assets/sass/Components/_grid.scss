@@ -6,8 +6,8 @@
   	position: relative;
     padding: 0;
 
-		@include media-breakpoint-up(lg) {
-				max-width: 90rem;
+		@include media-breakpoint-up(md) {
+				max-width: 90%;
 				margin: 0 2rem;
   	}
 

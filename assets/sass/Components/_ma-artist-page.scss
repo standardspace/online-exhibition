@@ -1,0 +1,47 @@
+.ma-artist-page {
+  
+}
+
+  .ma-artist-page__details {
+    // background-color: #212121;
+    color: #fff;
+  }
+
+  .ma-artist-page__portrait {
+    z-index: 1;
+    margin: 0 -1rem;
+
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ma-artist-page__bio {
+    position: relative;
+    max-width: 65ch;
+    background-color: #fff;
+    color: black;
+    margin: -3rem 1rem 1rem;
+    padding: 1rem;
+    z-index: 2;
+
+    @include media-breakpoint-up(md) {
+      margin: -5rem 2rem 1rem 2rem;
+      padding: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: -5rem 1rem 1rem 3rem;
+      padding: 2rem;
+    }
+
+    > * {
+      margin-top: 0;
+    }
+  }
+

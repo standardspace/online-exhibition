@@ -394,6 +394,11 @@ h4 {
   font-weight: 300;
   line-height: 1.4; }
 
+p {
+  font-size: 1.2rem;
+  max-width: 65ch;
+  line-height: 1.7; }
+
 /*---------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
@@ -3673,9 +3678,9 @@ html {
   margin: 0 1rem;
   position: relative;
   padding: 0; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .ma-container {
-      max-width: 90rem;
+      max-width: 90%;
       margin: 0 2rem; } }
   @media (min-width: 1200px) {
     .ma-container {
@@ -3893,6 +3898,38 @@ html {
     -o-object-position: center center;
        object-position: center center;
     border-radius: 50%; }
+
+.ma-artist-page__details {
+  color: #fff; }
+
+.ma-artist-page__portrait {
+  z-index: 1;
+  margin: 0 -1rem; }
+  @media (min-width: 768px) {
+    .ma-artist-page__portrait {
+      margin: 0; } }
+  .ma-artist-page__portrait img {
+    width: 100%;
+    height: auto; }
+
+.ma-artist-page__bio {
+  position: relative;
+  max-width: 65ch;
+  background-color: #fff;
+  color: black;
+  margin: -3rem 1rem 1rem;
+  padding: 1rem;
+  z-index: 2; }
+  @media (min-width: 768px) {
+    .ma-artist-page__bio {
+      margin: -5rem 2rem 1rem 2rem;
+      padding: 2rem; } }
+  @media (min-width: 992px) {
+    .ma-artist-page__bio {
+      margin: -5rem 1rem 1rem 3rem;
+      padding: 2rem; } }
+  .ma-artist-page__bio > * {
+    margin-top: 0; }
 
 /*--------------------------------------------------------------
 # Blocks
