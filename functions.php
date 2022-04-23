@@ -22,14 +22,14 @@ function theme_setup() {
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
-// Enqueue Scripts and Styles
-require get_template_directory() . '/includes/enqueue-scripts.php';
+// // Enqueue Scripts and Styles
+// require get_template_directory() . '/includes/enqueue-scripts.php';
 
-// Remove Bloatware
-require get_template_directory() . '/includes/bloatware.php';
+// // Remove Bloatware
+// require get_template_directory() . '/includes/bloatware.php';
 
-// Theme functions
-require get_template_directory() . '/includes/theme-functions.php';
+// // Theme functions
+// require get_template_directory() . '/includes/theme-functions.php';
 
 // Custom post types
 require get_template_directory() . '/includes/custom-post-types.php';
