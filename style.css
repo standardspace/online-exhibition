@@ -3972,8 +3972,10 @@ html {
         flex-basis: 40%; } }
 
 .ma-artwork-page img {
-  max-width: 100%;
-  height: auto; }
+  max-width: calc(100% + 2rem);
+  height: auto;
+  margin-left: -1rem;
+  margin-right: -1rem; }
 
 /*--------------------------------------------------------------
 # Blocks

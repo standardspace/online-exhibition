@@ -1,6 +1,9 @@
 .ma-artwork-page {
   img {
-    max-width: 100%;
+    max-width: calc(100% + 2rem);
     height: auto;
+
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 }
