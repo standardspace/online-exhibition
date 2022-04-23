@@ -10,11 +10,11 @@
 * $filename (string)(required) The name of your file, e.g 'logo.svg'
 **/
 
-// function fetch_file($filename) {
-//     $path = ABSPATH.'/wp-content/themes/'.get_template().'/assets/images/'.$filename;
-//     if (file_exists($path)) {
-//         return file_get_contents($path);
-//     } else {
-//         return 'path doesnt exist';
-//     }
-// }
+function fetch_file($filename) {
+    $path = ABSPATH.'/wp-content/themes/'.get_template().'/assets/images/'.$filename;
+    if (file_exists($path)) {
+        return file_get_contents($path);
+    } else {
+        return 'path doesnt exist';
+    }
+}
