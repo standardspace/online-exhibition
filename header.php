@@ -26,11 +26,11 @@
 <![endif]-->
 
 <header class="ma-site-header">
-    <h1 class="ma-site-title"><a href="<?php echo home_url() ?>"><?php bloginfo( 'name' ); ?></a></h1>
+    <h1 class="ma-site-title"><a href="<?php echo get_bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
     <nav class="ma-site-nav">
         <ul>
-            <li><a href="<?php echo get_bloginfo( 'url' )?>/artists/">Artists</a></li>
-            <li><a href="<?php echo get_bloginfo( 'url' )?>/artworks/">Gallery</a></li>
+            <li><a href="<?php echo get_bloginfo( 'url' ); ?>/artists/">Artists</a></li>
+            <li><a href="<?php echo get_bloginfo( 'url' ); ?>/artworks/">Gallery</a></li>
         </ul>
     </nav>
 </header>

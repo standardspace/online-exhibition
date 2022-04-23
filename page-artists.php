@@ -22,7 +22,7 @@
           <?php
         foreach ($terms as $term): ?>
           <div class="ma-artists-list__item">
-            <h2 class="ma-artists-list__item__title"><a href='/artists/<?php echo $term->slug; ?>'><?php echo $term->name; ?></a></h2>
+            <h2 class="ma-artists-list__item__title"><a href='<?php echo get_bloginfo( 'url' ); ?>/artists/<?php echo $term->slug; ?>'><?php echo $term->name; ?></a></h2>
             <?php 
 
               // Featured artwork
