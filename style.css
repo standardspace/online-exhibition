@@ -3776,6 +3776,7 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #212121;
+  background: linear-gradient(225deg, transparent 1rem, #212121 1rem);
   color: #fff;
   position: relative;
   aspect-ratio: 1 / 1;
@@ -3783,7 +3784,8 @@ html {
   margin-bottom: 1rem; }
   @media (min-width: 768px) {
     .ma-artists-list__item {
-      aspect-ratio: 2 / 1; } }
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(225deg, transparent 2rem, #212121 2rem); } }
   @media (min-width: 992px) {
     .ma-artists-list__item {
       aspect-ratio: 3 / 1;
@@ -3800,8 +3802,10 @@ html {
     height: 40px;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    background-color: #fff;
-    /* to see where it is */ }
+    background-color: #fff; }
+    @media (min-width: 992px) {
+      .ma-artists-list__item:after {
+        content: none; } }
 
 .ma-artists-list__item__title {
   -webkit-box-ordinal-group: 2;
@@ -3904,19 +3908,36 @@ html {
 
 .ma-artist-page__portrait {
   z-index: 1;
-  margin: 0 -1rem; }
+  margin: 0 -1rem;
+  position: relative; }
   @media (min-width: 768px) {
     .ma-artist-page__portrait {
       margin: 0; } }
   .ma-artist-page__portrait img {
     width: 100%;
     height: auto; }
+  .ma-artist-page__portrait:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    margin: -20px;
+    width: 40px;
+    height: 40px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background-color: #fff; }
+    @media (min-width: 992px) {
+      .ma-artist-page__portrait:after {
+        margin: -3rem;
+        width: 6rem;
+        height: 6rem; } }
 
 .ma-artist-page__bio {
   position: relative;
   max-width: 65ch;
-  background-color: #fff;
-  color: black;
+  background: #212121;
+  background: linear-gradient(225deg, transparent 2rem, #212121 2rem);
+  color: #fff;
   margin: -3rem 1rem 1rem;
   padding: 1rem;
   z-index: 2; }
@@ -3926,7 +3947,7 @@ html {
       padding: 2rem; } }
   @media (min-width: 992px) {
     .ma-artist-page__bio {
-      margin: -5rem 1rem 1rem 3rem;
+      margin: -10rem 1rem 1rem 3rem;
       padding: 2rem; } }
   .ma-artist-page__bio > * {
     margin-top: 0; }

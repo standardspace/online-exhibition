@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     background-color: #212121;
+    background: linear-gradient(225deg, transparent 1rem, #212121 1rem);
     color: #fff;
     position: relative;
     aspect-ratio: 1 / 1;
@@ -22,6 +23,7 @@
 
     @include media-breakpoint-up(md) {
       aspect-ratio: 2 / 1;
+      background: linear-gradient(225deg, transparent 2rem, #212121 2rem);
     }
 
     @include media-breakpoint-up(lg) {
@@ -37,7 +39,11 @@
       width: 40px;
       height: 40px;
       transform: rotate(45deg);
-      background-color: #fff; /* to see where it is */
+      background-color: #fff;
+
+      @include media-breakpoint-up(lg) {
+        content: none;
+      }
     }
   }
 
