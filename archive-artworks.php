@@ -4,7 +4,7 @@
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<li class="ma-gallery__item">
 			<h2 class="ma-gallery__item__title"><a href="<?php the_permalink(); ?>"><span class="sr-only"><?php the_title(); ?></a></span></h2>
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('large'); ?>
 			<!-- <p> Artist:        
 				<?php
 					// $terms = get_the_terms( $post->ID , 'artists' );
