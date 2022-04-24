@@ -20,7 +20,7 @@ Version: 1.0.0
 --------------------------------------------------------------*/
 @import 'Base/normalize';
 @import 'Base/colors';
-@import 'Base/typography';
+
 
 /*---------------------------------------------------------------
 # Helpers
@@ -59,3 +59,4 @@ Version: 1.0.0
 --------------------------------------------------------------*/
 // If styles for specific pages required, created Pages folder
 // and import the files here.
+@import 'Base/typography';

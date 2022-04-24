@@ -9,13 +9,13 @@
   .ma-artists-list__item {
     display: flex;
     flex-direction: column;
-    background-color: #212121;
-    background: linear-gradient(225deg, transparent 1rem, #212121 1rem);
-    color: #fff;
+    background-color: $card-bg;
+    background: linear-gradient(225deg, transparent 1rem, $card-bg 1rem);
+    color: $card-txt-color;
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     @include media-breakpoint-up(sm) {
       // aspect-ratio: 1.5 / 1;
@@ -23,7 +23,7 @@
 
     @include media-breakpoint-up(md) {
       aspect-ratio: 2 / 1;
-      background: linear-gradient(225deg, transparent 2rem, #212121 2rem);
+      background: linear-gradient(225deg, transparent 2rem, $card-bg 2rem);
     }
 
     @include media-breakpoint-up(lg) {

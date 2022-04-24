@@ -34,14 +34,12 @@
 
 		<?php if ( have_posts() ) : ?>
 			<div class="ma-artist-page__artworks">
-				<h2>Artworks by <?php echo single_term_title(); ?></h2>
+				<h2>Artworks</h2>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<section>
-						<h3> <?php the_title(); ?></h3>
-						<?php the_post_thumbnail('medium'); ?>
-						<?php // the_excerpt(); ?>
-						<button> <a href="<?php the_permalink(); ?>"> View </a> </button>
-					</section>
+					<div class="ma-artist-page__artwork">
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<?php the_post_thumbnail('large'); ?>
+					</div>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>	

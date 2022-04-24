@@ -334,71 +334,6 @@ template {
  * For advice on good variable names for your colours, refer to:
  * https://css-tricks.com/what-do-you-name-color-variables/
  */
-/**
- * Update the variables with your chosen font and weights.
- */
-/**
- * Set base font size.
- */
-html {
-  font-size: 16px; }
-
-html,
-body,
-button,
-input,
-select,
-textarea {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 300; }
-
-/**
- * Ammend to desired font weight for bold text.
- */
-strong,
-b {
-  font-weight: 500; }
-
-p,
-li,
-span,
-a,
-button,
-input,
-select,
-textarea {
-  font-size: 1rem;
-  line-height: 1.5; }
-
-h1,
-h2,
-.h1,
-.h2 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 1.2; }
-  @media (min-width: 992px) {
-    h1,
-    h2,
-    .h1,
-    .h2 {
-      font-size: 3.125rem; } }
-
-h3,
-.h3 {
-  font-size: 1.5625rem;
-  font-weight: 300; }
-
-h4 {
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.4; }
-
-p {
-  font-size: 1.2rem;
-  max-width: 65ch;
-  line-height: 1.7; }
-
 /*---------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
@@ -3680,10 +3615,10 @@ html {
   padding: 0; }
   @media (min-width: 768px) {
     .ma-container {
-      max-width: 90%;
       margin: 0 2rem; } }
   @media (min-width: 1200px) {
     .ma-container {
+      max-width: 90%;
       margin: 0 auto; } }
 
 .ma-site-header {
@@ -3775,17 +3710,17 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #212121;
-  background: linear-gradient(225deg, transparent 1rem, #212121 1rem);
-  color: #fff;
+  background-color: #efefef;
+  background: linear-gradient(225deg, transparent 1rem, #efefef 1rem);
+  color: #000000;
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  margin-bottom: 1rem; }
+  margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .ma-artists-list__item {
       aspect-ratio: 2 / 1;
-      background: linear-gradient(225deg, transparent 2rem, #212121 2rem); } }
+      background: linear-gradient(225deg, transparent 2rem, #efefef 2rem); } }
   @media (min-width: 992px) {
     .ma-artists-list__item {
       aspect-ratio: 3 / 1;
@@ -3919,34 +3854,42 @@ html {
       flex-basis: 100%; }
   @media (min-width: 768px) {
     .ma-artist-page__portrait {
-      margin: 0; } }
-  .ma-artist-page__portrait img {
-    width: 100%;
-    height: auto; }
-  .ma-artist-page__portrait:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    margin: -20px;
-    width: 40px;
-    height: 40px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    background-color: #fff; }
-    @media (min-width: 992px) {
+      margin: 0; }
+      .ma-artist-page__portrait:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        margin: -20px;
+        width: 40px;
+        height: 40px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        background-color: #fff; } }
+    @media (min-width: 768px) and (min-width: 992px) {
       .ma-artist-page__portrait:after {
         margin: -3rem;
         width: 6rem;
         height: 6rem; } }
+  .ma-artist-page__portrait img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%; }
+    @media (min-width: 768px) {
+      .ma-artist-page__portrait img {
+        aspect-ratio: 5 / 3; } }
 
 .ma-artist-page__bio {
   position: relative;
   max-width: 65ch;
-  background: #212121;
-  background: linear-gradient(225deg, transparent 2rem, #212121 2rem);
-  color: #fff;
-  margin: -3rem 1rem 1rem;
-  padding: 1rem;
+  background: #efefef;
+  background: linear-gradient(225deg, transparent 2rem, #efefef 2rem);
+  color: #000000;
+  margin: -3rem 0 1rem;
+  padding: 1.5rem 1rem;
   z-index: 2;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -3971,6 +3914,41 @@ html {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%; } }
 
+.ma-artist-page__artwork {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-bottom: 1rem; }
+  .ma-artist-page__artwork h3 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0;
+    padding: 1rem;
+    background: #efefef; }
+    .ma-artist-page__artwork h3 a {
+      color: inherit; }
+      .ma-artist-page__artwork h3 a:hover, .ma-artist-page__artwork h3 a:focus {
+        text-decoration: underline; }
+      .ma-artist-page__artwork h3 a::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+  .ma-artist-page__artwork img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    max-width: 100%;
+    height: auto; }
+
 .ma-artwork-page img {
   max-width: calc(100% + 2rem);
   height: auto;
@@ -3983,6 +3961,76 @@ html {
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+/**
+ * Update the variables with your chosen font and weights.
+ */
+/**
+ * Set base font size.
+ */
+html {
+  font-size: 16px; }
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 300; }
+
+/**
+ * Ammend to desired font weight for bold text.
+ */
+strong,
+b {
+  font-weight: 500; }
+
+p,
+li,
+span,
+a,
+button,
+input,
+select,
+textarea {
+  font-size: 1rem;
+  line-height: 1.5; }
+
+h1,
+h2,
+.h1,
+.h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2; }
+  @media (min-width: 576px) {
+    h1,
+    h2,
+    .h1,
+    .h2 {
+      font-size: 2.5rem; } }
+  @media (min-width: 768px) {
+    h1,
+    h2,
+    .h1,
+    .h2 {
+      font-size: 3.125rem; } }
+
+h3,
+.h3 {
+  font-size: 1.5625rem;
+  font-weight: 300; }
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4; }
+
+p {
+  font-size: 1.2rem;
+  max-width: 65ch;
+  line-height: 1.7; }
 
 
 /*# sourceMappingURL=style.css.map*/

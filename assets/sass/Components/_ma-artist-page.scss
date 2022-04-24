@@ -20,39 +20,48 @@
 
     @include media-breakpoint-up(md) {
       margin: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        margin: -20px;
+        width: 40px;
+        height: 40px;
+        transform: rotate(45deg);
+        background-color: #fff;
+
+        @include media-breakpoint-up(lg) {
+          margin: -3rem;
+          width: 6rem;
+          height: 6rem;
+        }
+      }
     }
 
     img {
       width: 100%;
       height: auto;
-    }
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: 50% 50%;
 
-    &:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      margin: -20px;
-      width: 40px;
-      height: 40px;
-      transform: rotate(45deg);
-      background-color: #fff;
-
-      @include media-breakpoint-up(lg) {
-        margin: -3rem;
-        width: 6rem;
-        height: 6rem;
+      @include media-breakpoint-up(md) {
+        aspect-ratio: 5 / 3;
       }
     }
+
+
   }
 
   .ma-artist-page__bio {
     position: relative;
     max-width: 65ch;
-    background: #212121;
-    background: linear-gradient(225deg, transparent 2rem, #212121 2rem);
-    color: #fff;
-    margin: -3rem 1rem 1rem;
-    padding: 1rem;
+    background: $card-bg;
+    background: linear-gradient(225deg, transparent 2rem, $card-bg 2rem);
+    color: $card-txt-color;
+    margin: -3rem 0 1rem;
+    padding: 1.5rem 1rem;
     z-index: 2;
     height: max-content;
 
@@ -76,5 +85,43 @@
   .ma-artist-page__artworks {
     @include media-breakpoint-up(lg) {
       flex-basis: 40%;
+    }
+  }
+
+  .ma-artist-page__artwork {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 1rem;
+
+    h3 {
+      order: 2;
+      margin: 0;
+      padding: 1rem;
+      background: $card-bg;
+
+      a {
+        color: inherit;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    img {
+      order: 1;
+      max-width: 100%;
+      height: auto;
     }
   }

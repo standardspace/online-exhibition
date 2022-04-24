@@ -3,3 +3,9 @@
  * For advice on good variable names for your colours, refer to:
  * https://css-tricks.com/what-do-you-name-color-variables/
  */
+
+ $color-light-grey: #efefef;
+ $color-black: #000000; 
+
+ $card-bg: $color-light-grey;
+ $card-txt-color: $color-black;
