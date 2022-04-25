@@ -3620,6 +3620,9 @@ html {
     .ma-container {
       max-width: 90%;
       margin: 0 auto; } }
+  .home .ma-container {
+    max-width: 900px;
+    margin: 0 auto; }
 
 .ma-site-header {
   display: -webkit-box;
@@ -3679,6 +3682,12 @@ html {
   @media (min-width: 992px) {
     .ma-gallery {
       margin: 2rem; } }
+  .js .ma-gallery {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+    .js .ma-gallery.ma-gallery--loaded {
+      opacity: 1; }
 
 .ma-gallery__item {
   max-width: 100%; }
@@ -3695,6 +3704,68 @@ html {
     right: 0;
     bottom: 0;
     left: 0; }
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%); }
+  .no-js .loading {
+    display: none; }
+  .ma-gallery--loaded + .loading {
+    display: none; }
+  .loading .loading__dot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #666;
+    opacity: 0;
+    margin: 0 0.4rem;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    -webkit-animation: loading-grow 2s infinite;
+            animation: loading-grow 2s infinite;
+    -webkit-animation-delay: 4;
+            animation-delay: 4; }
+    .loading .loading__dot:nth-of-type(1) {
+      -webkit-animation-delay: 0;
+              animation-delay: 0; }
+    .loading .loading__dot:nth-of-type(2) {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+    .loading .loading__dot:nth-of-type(3) {
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+
+@-webkit-keyframes loading-grow {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0; }
+  33% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5; }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0; } }
+
+@keyframes loading-grow {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0; }
+  33% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5; }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0; } }
 
 .ma-artists-list {
   padding-top: 2rem; }
