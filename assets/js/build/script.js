@@ -1,13 +1,14 @@
 // Go wild...
 import Macy from "macy";
 
-const grids = document.querySelectorAll('.ma-gallery');
+const grid = document.querySelector('.ma-gallery');
 
-grids.forEach( grid => {
+if (grid) {
+
   const maGalleryGrid = Macy({
     container: grid,
     trueOrder: true,
-    waitForImages: false,
+    waitForImages: true,
     mobileFirst: true,
     margin: 8,
     columns: 1,
@@ -27,7 +28,7 @@ grids.forEach( grid => {
   });
 
   maGalleryGrid.on(maGalleryGrid.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
-    // console.log(ctx);
     ctx.instance.container.classList.add('ma-gallery--loaded');
   });
-})
+
+}
