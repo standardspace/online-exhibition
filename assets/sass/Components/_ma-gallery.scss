@@ -37,7 +37,7 @@
       transition: transform 0.3s ease;
     }
 
-
+    &:hover,
     &:focus-within {
       img {
         transform: scale(1.05);
@@ -70,6 +70,8 @@
         background: transparent;
         border: 0;
         font-size: 0;
+        z-index: 1000;
+        cursor: pointer;
 
         &:focus {
           outline: none;

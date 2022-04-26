@@ -3694,7 +3694,7 @@ html {
     transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
     transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
-  .ma-gallery__item:focus-within img {
+  .ma-gallery__item:hover img, .ma-gallery__item:focus-within img {
     -webkit-transform: scale(1.05);
             transform: scale(1.05); }
 
@@ -3719,7 +3719,9 @@ html {
     margin: 0;
     background: transparent;
     border: 0;
-    font-size: 0; }
+    font-size: 0;
+    z-index: 1000;
+    cursor: pointer; }
     .ma-gallery__item__title .ma-gallery__item__button:focus {
       outline: none; }
 
