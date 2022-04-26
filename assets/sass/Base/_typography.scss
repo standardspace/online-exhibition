@@ -7,6 +7,9 @@ $primary-font-light: 300;
 $primary-font-medium: 500;
 $primary-font-bold: 700;
 
+$secondary-font: 'Cormorant', serif;
+
+
 /**
  * Set base font size.
  */
@@ -21,7 +24,8 @@ button,
 input,
 select,
 textarea {
-    font-family: $primary-font;
+    // font-family: $primary-font;
+    font-family: $secondary-font;
     font-weight: $primary-font-light;
 }
 
