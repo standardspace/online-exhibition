@@ -55,7 +55,7 @@ if (maGallery) {
         <img class="ma-gallery-scroller__item__image" src="${imageFullPath}" alt="Artwork: ${itemTitle}" />
         <figcaption class="ma-gallery-scroller__item__title">
           <a href="${itemLink}">${itemTitle}</a> 
-          by ${itemArtist}
+          by <a href="${itemArtistUrl}">${itemArtist}</a>
         </figcaption>
       </figure>
     </li>`
