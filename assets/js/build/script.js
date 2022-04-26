@@ -24,6 +24,7 @@ if (maGallery) {
         columns: 3
       },
       1440: {
+        margin: 48,
         columns: 4
       }
     }
@@ -40,7 +41,7 @@ if (maGallery) {
   let modalArtworks = '';
 
   // Create Modal Content
-  galleryItems.forEach((item) => {
+  galleryItems.forEach((item, idx) => {
     const itemTitle = item.querySelector('.ma-gallery__item__title').innerText;
     const imageFullPath = item.dataset.imageFull;
     const itemLink = item.querySelector('.ma-gallery__item__link').getAttribute('href');
@@ -49,7 +50,7 @@ if (maGallery) {
     console.log(itemLink)
     // Get a link and add
     modalArtworks += `
-    <li class="ma-gallery-scroller__item">
+    <li class="ma-gallery-scroller__item" id="ma-gallery-scroll-item-${idx}">
       <figure class="ma-gallery-scroller__item__figure">
         <img class="ma-gallery-scroller__item__image" src="${imageFullPath}" alt="Artwork: ${itemTitle}" />
         <figcaption class="ma-gallery-scroller__item__title">
@@ -91,27 +92,36 @@ if (maGallery) {
   var dialog = new A11yDialog(dialogEl, mainEl)
 
   dialog.on('show', function (dialogEl, triggerEl) {
-    console.log(dialogEl)
-    console.log(triggerEl)
+    // console.log(dialogEl)
+    // console.log(triggerEl)
+
+    const galleryScroller = dialogEl.querySelector('.ma-gallery-scroller')
+    console.log(galleryScroller)
   })
 
 
-  galleryItems.forEach( (galleryItem) => {
+  galleryItems.forEach( (galleryItem, idx) => {
 
     const imageFullPath = galleryItem.dataset.imageFull;
     const itemHeading = galleryItem.querySelector('.ma-gallery__item__title')
     const link = itemHeading.querySelector('.ma-gallery__item__link')
     const linkInner = link.innerHTML;
 
+    galleryItem.dataset.itemIndex = idx;
+
     // Swap link for button
     itemHeading.innerHTML = `<button class="ma-gallery__item__button" data-a11y-dialog-show="my-dialog">${linkInner}</button>`
 
     const itemButton = itemHeading.querySelector('.ma-gallery__item__button')
 
-    itemButton.onclick = () => {
+    itemButton.onclick = (event) => {
+
+      const itemIndex = galleryItem.dataset.itemIndex;
+      const targetItem = document.getElementById('ma-gallery-scroll-item-' + itemIndex)
       // Open gallery modal
-      console.log('Open gallery modal')
       dialog.show();
+      // Scroll to clicked item
+      targetItem.scrollIntoView();
     }
 
   })
