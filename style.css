@@ -3840,9 +3840,8 @@ html {
      object-fit: contain; }
 
 .ma-gallery-scroller__item__title a {
-  color: inherit; }
-  .ma-gallery-scroller__item__title a:hover, .ma-gallery-scroller__item__title a:focus {
-    text-decoration: underline; }
+  color: inherit;
+  text-decoration: underline; }
 
 .ma-artists-list {
   padding-top: 2rem; }
