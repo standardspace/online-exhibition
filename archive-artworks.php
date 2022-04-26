@@ -17,10 +17,10 @@
 		</li>
 	<?php endwhile; endif; ?>	
 </ul>
-<div class="loading">
+<!-- <div class="loading">
 	<span class="loading__dot"></span>
 	<span class="loading__dot"></span>
 	<span class="loading__dot"></span>
-</div>
+</div> -->
 
 <?php get_footer(); ?>

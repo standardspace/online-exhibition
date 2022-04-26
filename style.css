@@ -3682,15 +3682,11 @@ html {
   @media (min-width: 992px) {
     .ma-gallery {
       margin: 2rem; } }
-  .js .ma-gallery {
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease; }
-    .js .ma-gallery.ma-gallery--loaded {
-      opacity: 1; }
 
 .ma-gallery__item {
   max-width: 100%; }
+  .ma-gallery__item:focus-within {
+    border: 1px solid red; }
   .ma-gallery__item img {
     max-width: 100%;
     height: auto; }
@@ -3699,6 +3695,8 @@ html {
   margin: 0; }
   .ma-gallery__item__title a:after {
     content: "";
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     position: absolute;
     top: 0;
     right: 0;

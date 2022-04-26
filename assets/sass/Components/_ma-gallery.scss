@@ -18,17 +18,21 @@
   }
 
   .js & {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    // opacity: 0;
+    // transition: opacity 0.3s ease;
 
     &.ma-gallery--loaded {
-      opacity: 1;
+      // opacity: 1;
     }
   }
 }
 
   .ma-gallery__item {
     max-width: 100%;
+
+    &:focus-within {
+      border: 1px solid red;
+    }
 
     img {
       max-width: 100%;
@@ -41,6 +45,7 @@
       a {
         &:after {
           content: "";
+          box-sizing: border-box;
           position: absolute;
           top: 0;
           right: 0;
