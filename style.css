@@ -3817,6 +3817,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3832,9 +3835,14 @@ html {
 .ma-gallery-scroller__item__image {
   max-width: 100%;
   height: auto;
-  max-height: calc(100% - 3rem);
+  max-height: calc(100vh - 6rem);
   -o-object-fit: contain;
      object-fit: contain; }
+
+.ma-gallery-scroller__item__title a {
+  color: inherit; }
+  .ma-gallery-scroller__item__title a:hover, .ma-gallery-scroller__item__title a:focus {
+    text-decoration: underline; }
 
 .ma-artists-list {
   padding-top: 2rem; }

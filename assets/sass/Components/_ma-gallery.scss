@@ -157,6 +157,7 @@
     padding: 0;
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
     scroll-snap-align: start;
   }
@@ -172,13 +173,18 @@
   .ma-gallery-scroller__item__image {
     max-width: 100%;
     height: auto;
-    max-height: calc(100% - 3rem);
+    max-height: calc(100vh - 6rem);
     object-fit: contain;
   }
 
   .ma-gallery-scroller__item__title {
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
   }
