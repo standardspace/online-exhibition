@@ -108,23 +108,24 @@ dialog.dialog-content {
 
 .dialog-close {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  top: 0.5rem;
+  right: 0.5rem;
   border: 0;
   padding: 0;
   background-color: transparent;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 2em;
   width: 1.2em;
   height: 1.2em;
   text-align: center;
   cursor: pointer;
   transition: 0.15s;
+  z-index: 100;
 }
 
 @media screen and (min-width: 700px) {
   .dialog-close {
-    top: 1em;
-    right: 1em;
+    top: 1rem;
+    right: 1rem;
   }
 }

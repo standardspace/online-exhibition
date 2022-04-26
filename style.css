@@ -3685,11 +3685,18 @@ html {
 
 .ma-gallery__item {
   max-width: 100%; }
-  .ma-gallery__item:focus-within {
-    border: 1px solid red; }
   .ma-gallery__item img {
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
+  .ma-gallery__item:focus-within img {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
 
 .ma-gallery__item__title {
   margin: 0; }
@@ -3713,6 +3720,8 @@ html {
     background: transparent;
     border: 0;
     font-size: 0; }
+    .ma-gallery__item__title .ma-gallery__item__button:focus {
+      outline: none; }
 
 .loading {
   position: absolute;
@@ -4191,24 +4200,25 @@ dialog.dialog-content {
 
 .dialog-close {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  top: 0.5rem;
+  right: 0.5rem;
   border: 0;
   padding: 0;
   background-color: transparent;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 2em;
   width: 1.2em;
   height: 1.2em;
   text-align: center;
   cursor: pointer;
   -webkit-transition: 0.15s;
-  transition: 0.15s; }
+  transition: 0.15s;
+  z-index: 100; }
 
 @media screen and (min-width: 700px) {
   .dialog-close {
-    top: 1em;
-    right: 1em; } }
+    top: 1rem;
+    right: 1rem; } }
 
 /*--------------------------------------------------------------
 # Blocks
