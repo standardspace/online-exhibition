@@ -3,7 +3,7 @@
     <?php
     if(have_posts()) : while(have_posts()) : the_post(); ?>
       <h1><?php the_title(); ?></h1>
-      <?php the_post_thumbnail($size); ?>
+      <?php the_post_thumbnail('full'); ?>
 
       <?php the_content(); ?> 
       <?php echo get_the_term_list( $post->ID, 'artists', 'Artist: ', ', ', '' ); ?> 
