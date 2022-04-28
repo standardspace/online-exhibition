@@ -189,3 +189,41 @@
       // }
     }
   }
+
+  .ma-gallery-scroller-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .ma-gallery-scroller-nav__prev,
+    .ma-gallery-scroller-nav__next {
+      width: 3rem;
+      height: 3.5rem;
+      appearance: none;
+      background: rgba(#fff, 0.6);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-50%);
+      cursor: pointer;
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+        fill: #666;
+        pointer-events: none;
+      }
+    }
+
+    .ma-gallery-scroller-nav__prev {
+
+    }
+
+    .ma-gallery-scroller-nav__next {
+
+    }

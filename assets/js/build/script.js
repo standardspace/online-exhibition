@@ -1,6 +1,7 @@
 // Go wild...
 import Macy from "macy";
-import A11yDialog from 'a11y-dialog'
+import A11yDialog from 'a11y-dialog';
+var inViewport = require('in-viewport');
 
 const maGallery = document.querySelector('.ma-gallery');
 
@@ -30,15 +31,30 @@ if (maGallery) {
     }
   });
 
-  // maGalleryGrid.on(maGalleryGrid.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
-  //   ctx.instance.container.classList.add('ma-gallery--loaded');
-  // });
-
   // Gallery modal
   const galleryItems = maGallery.querySelectorAll('.ma-gallery__item');
-  const galleryItemsArray = [...galleryItems];
 
   let modalArtworks = '';
+
+  const iconChevronLeft = `<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    focusable="false"
+    height="24px" 
+    viewBox="0 0 24 24" 
+    width="24px" 
+    fill="#000000">
+      <path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>`
+
+  const iconChevronRight = `<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    focusable = "false"
+    height="24px" 
+    viewBox="0 0 24 24" 
+    width="24px" 
+    fill="#000000">
+      <path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    </svg>`;
 
   // Create Modal Content
   galleryItems.forEach((item, idx) => {
@@ -47,7 +63,7 @@ if (maGallery) {
     const itemLink = item.querySelector('.ma-gallery__item__link').getAttribute('href');
     const itemArtist = item.dataset.artist;
     const itemArtistUrl = item.dataset.artistUrl;
-    console.log(itemLink)
+
     // Get a link and add
     modalArtworks += `
     <li class="ma-gallery-scroller__item" id="ma-gallery-scroll-item-${idx}">
@@ -83,6 +99,11 @@ if (maGallery) {
       <ul class="ma-gallery-scroller">
         ${modalArtworks}
       </ul>
+      <div class="ma-gallery-scroller-nav"> 
+        <button class="ma-gallery-scroller-nav__prev"><span class="sr-only">Previous</span>${iconChevronLeft}</button>
+        <button class="ma-gallery-scroller-nav__next"><span class="sr-only">Next</span>${iconChevronRight}</button>
+      </div>
+
     </div>`;
 
   document.body.appendChild(modal);
@@ -95,8 +116,72 @@ if (maGallery) {
     // console.log(dialogEl)
     // console.log(triggerEl)
 
-    const galleryScroller = dialogEl.querySelector('.ma-gallery-scroller')
-    console.log(galleryScroller)
+    const galleryScroller = dialogEl.querySelector('.ma-gallery-scroller');
+    const galleryItems = galleryScroller.querySelectorAll('.ma-gallery-scroller__item');
+    // console.log(galleryScroller)
+
+    const buttonPrev = dialogEl.querySelector('.ma-gallery-scroller-nav__prev');
+    const buttonNext = dialogEl.querySelector('.ma-gallery-scroller-nav__next');
+
+    const navigateScroller = (evt, type) => {
+      galleryItems.forEach((item, idx) => {
+        let currentVisible = inViewport(item, {
+          container: galleryScroller,
+          offset: -100
+        });
+
+        if (currentVisible) {
+          const targetElIdx = ( type === "next") ? idx + 1 : idx - 1;
+          galleryItems[targetElIdx].scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      })
+    }
+
+    buttonPrev.addEventListener("click", (evt) => {
+      navigateScroller(evt, 'prev')
+    })
+
+    buttonNext.addEventListener("click", (evt) => {
+      navigateScroller(evt, 'next')
+    })
+
+    // Listen for scroll events as we;ll need to 
+    // disable buttons when scroll reaches beginning or end
+    // Setup isScrolling variable
+    let isScrolling;
+    galleryScroller.addEventListener('scroll', function (event) {
+
+      // Clear our timeout throughout the scroll
+      window.clearTimeout(isScrolling);
+
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function () {
+
+        // Run the callback
+        galleryItems.forEach((item, idx) => {
+          let currentVisible = inViewport(item, {
+            container: galleryScroller,
+            offset: -100
+          });
+
+          if (currentVisible) {
+
+            // Disable button if reached beginning or end
+            if (galleryItems.length - 1 === idx) {
+              buttonPrev.disabled = false;
+              buttonNext.disabled = true;
+            } else if (idx === 0) {
+              buttonPrev.disabled = true;
+              buttonNext.disabled = false;
+            }
+          }
+        })
+
+      }, 66);
+
+    }, false);
   })
 
 
@@ -118,13 +203,19 @@ if (maGallery) {
 
       const itemIndex = galleryItem.dataset.itemIndex;
       const targetItem = document.getElementById('ma-gallery-scroll-item-' + itemIndex)
+
       // Open gallery modal
       dialog.show();
+
+      // Re-enable buttons (they may have been disable in previous opening)
+      const buttonPrev = dialogEl.querySelector('.ma-gallery-scroller-nav__prev');
+      const buttonNext = dialogEl.querySelector('.ma-gallery-scroller-nav__next');
+      buttonPrev.disabled = false;
+      buttonNext.disabled = false;
+
       // Scroll to clicked item
       targetItem.scrollIntoView();
     }
 
   })
-} 
-
-
+}
