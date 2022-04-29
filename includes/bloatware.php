@@ -39,12 +39,12 @@ add_action('init', 'remove_comment_support', 100);
  * Remove query strings for static resources.
  * Note: You probably only want this in production as some CDN's and webservers can't cache files with query strings.
 **/
-function _remove_script_version( $src ){
-    $parts = explode( '?ver', $src );
-    return $parts[0];
-}
-add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+// function _remove_script_version( $src ){
+//     $parts = explode( '?ver', $src );
+//     return $parts[0];
+// }
+// add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+// add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
 
 // Remove oEmbed scripts: https://wordpress.org/support/article/embeds/
 function speed_stop_loading_wp_embed() {
