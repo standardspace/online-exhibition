@@ -170,9 +170,11 @@ if (maGallery) {
 
             // Disable button if reached beginning or end
             if (galleryItems.length - 1 === idx) {
+              console.log('end of the line');
               buttonPrev.disabled = false;
               buttonNext.disabled = true;
             } else if (idx === 0) {
+              console.log('start of the line');
               buttonPrev.disabled = true;
               buttonNext.disabled = false;
             }
@@ -215,6 +217,11 @@ if (maGallery) {
 
       // Scroll to clicked item
       targetItem.scrollIntoView();
+
+      // Disable previous button first item
+      if (itemIndex == 0) {
+        buttonPrev.disabled = true
+      }
     }
 
   })

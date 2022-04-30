@@ -3797,8 +3797,8 @@ html {
   scrollbar-color: #fff #000;
   list-style: none;
   padding: 0;
-  margin: 2rem 0 0 0;
-  height: calc(100vh - 1rem);
+  margin: 0;
+  height: 100vh;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory; }
 
@@ -3828,9 +3828,10 @@ html {
 .ma-gallery-scroller__item__figure {
   display: inline-block;
   width: auto;
-  max-width: calc(100% - 4rem);
+  max-width: calc(100% - 6rem);
   max-height: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
 
 .ma-gallery-scroller__item__image {
   max-width: 100%;
@@ -3873,6 +3874,8 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer; }
@@ -3882,6 +3885,10 @@ html {
     height: 3rem;
     fill: #666;
     pointer-events: none; }
+  .ma-gallery-scroller-nav__prev:disabled, .ma-gallery-scroller-nav__prev[disabled],
+  .ma-gallery-scroller-nav__next:disabled,
+  .ma-gallery-scroller-nav__next[disabled] {
+    opacity: 0.2; }
 
 .ma-artists-list {
   padding-top: 2rem; }
