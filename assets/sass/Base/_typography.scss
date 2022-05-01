@@ -2,7 +2,7 @@
  * Update the variables with your chosen font and weights.
  */
 
-$primary-font: 'Libre Baskerville', serif;
+$primary-font: 'Jost', sans-serif;
 $primary-font-light: 300;
 $primary-font-medium: 500;
 $primary-font-bold: 700;
@@ -46,7 +46,7 @@ button,
 input,
 select,
 textarea {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5; 
 }
 
@@ -80,7 +80,18 @@ h4 {
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     max-width: 65ch;
     line-height: 1.7;
+}
+
+a {
+    color: $color-black;
+    text-decoration: underline;
+}
+
+.home {
+    h1 {
+        text-transform: uppercase;
+    }
 }

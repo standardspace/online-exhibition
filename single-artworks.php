@@ -6,9 +6,10 @@
       <?php the_post_thumbnail('full'); ?>
 
       <?php the_content(); ?> 
-      <?php echo get_the_term_list( $post->ID, 'artists', 'Artist: ', ', ', '' ); ?> 
-      <a href="<?php echo get_bloginfo( 'url' ); ?>/artworks#item-<?= $post->ID ?>">View in gallery</a>
-      <?php $artist = get_the_terms($post->ID, 'artists'); ?>
+      <p>
+        <?php echo get_the_term_list( $post->ID, 'artists', 'Artist: ', ', ', '' ); ?> 
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/artworks#item-<?= $post->ID ?>">View in gallery</a>
+      </p>
 
     <?php endwhile; endif; ?>
   </div>

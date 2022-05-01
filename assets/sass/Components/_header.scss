@@ -12,6 +12,7 @@
   a {
     color: inherit;
     line-height: initial;
+    text-decoration: none;
 
     &:hover,
     &:focus {
@@ -21,11 +22,20 @@
 }
 
 .ma-site-title {
-  font-size: 2rem;
+  font-size: 1.1rem;
   margin: 0;
   line-height: normal;
+  text-transform: uppercase;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+  }
 
   span {
+    font-size: inherit;
+  }
+
+  a {
     font-size: inherit;
   }
 }
@@ -41,8 +51,16 @@
   }
 
   li {
-    font-size: 2rem;
+    font-size: 1.1rem;
     display: inline-block;
     margin-left: 1rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: inherit;
+    }
   }
 }

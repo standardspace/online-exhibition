@@ -3611,14 +3611,14 @@ html {
 
 .ma-container {
   margin: 0 1rem;
-  position: relative;
-  padding: 0; }
+  position: relative; }
   @media (min-width: 768px) {
     .ma-container {
       margin: 0 2rem; } }
   @media (min-width: 1200px) {
     .ma-container {
-      max-width: 90%;
+      width: calc(100% - 4rem);
+      max-width: 1600px;
       margin: 0 auto; } }
   .home .ma-container {
     max-width: 900px;
@@ -3640,15 +3640,22 @@ html {
       padding: 1rem 2rem; } }
   .ma-site-header a {
     color: inherit;
-    line-height: initial; }
+    line-height: initial;
+    text-decoration: none; }
     .ma-site-header a:hover, .ma-site-header a:focus {
       text-decoration: underline; }
 
 .ma-site-title {
-  font-size: 2rem;
+  font-size: 1.1rem;
   margin: 0;
-  line-height: normal; }
+  line-height: normal;
+  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    .ma-site-title {
+      font-size: 2rem; } }
   .ma-site-title span {
+    font-size: inherit; }
+  .ma-site-title a {
     font-size: inherit; }
 
 .ma-site-nav {
@@ -3660,9 +3667,14 @@ html {
     padding: 0;
     list-style: none; }
   .ma-site-nav li {
-    font-size: 2rem;
+    font-size: 1.1rem;
     display: inline-block;
     margin-left: 1rem; }
+    @media (min-width: 768px) {
+      .ma-site-nav li {
+        font-size: 2rem; } }
+    .ma-site-nav li a {
+      font-size: inherit; }
 
 .container img {
   max-width: 100%;
@@ -4032,13 +4044,15 @@ html {
        object-position: center center;
     border-radius: 50%; }
 
-@media (min-width: 768px) {
-  .ma-artist-page__details {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; } }
+.ma-artist-page__details {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .ma-artist-page__details {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; } }
 
 .ma-artist-page__portrait {
   z-index: 1;
@@ -4148,6 +4162,10 @@ html {
   height: auto;
   margin-left: -1rem;
   margin-right: -1rem; }
+  @media (min-width: 768px) {
+    .ma-artwork-page img {
+      max-width: 100%;
+      margin: 0 auto; } }
 
 /* -------------------------------------------------------------------------- *\
  * Necessary styling for the dialog to work
@@ -4269,7 +4287,8 @@ dialog.dialog-content {
   cursor: pointer;
   -webkit-transition: 0.15s;
   transition: 0.15s;
-  z-index: 100; }
+  z-index: 100;
+  color: #666; }
 
 /*--------------------------------------------------------------
 # Blocks
@@ -4292,7 +4311,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 300; }
 
 /**
@@ -4310,7 +4329,7 @@ button,
 input,
 select,
 textarea {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5; }
 
 h1,
@@ -4344,9 +4363,16 @@ h4 {
   line-height: 1.4; }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   max-width: 65ch;
   line-height: 1.7; }
+
+a {
+  color: #000000;
+  text-decoration: underline; }
+
+.home h1 {
+  text-transform: uppercase; }
 
 
 /*# sourceMappingURL=style.css.map*/

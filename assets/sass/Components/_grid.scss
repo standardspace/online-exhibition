@@ -4,14 +4,19 @@
 .ma-container {
 	margin: 0 1rem;
 	position: relative;
-	padding: 0;
+	// padding: 1rem;
 
 	@include media-breakpoint-up(md) {
 		margin: 0 2rem;
 	}
 
+	@include media-breakpoint-up(l) {
+		// max-width: 90%;
+	}
+
 	@include media-breakpoint-up(xl) {
-		max-width: 90%;
+		width: calc(100% - 4rem);
+		max-width: 1600px;
 		margin: 0 auto;
 	}
 
