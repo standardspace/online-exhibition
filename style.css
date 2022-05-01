@@ -3635,7 +3635,7 @@ html {
           align-items: center;
   line-height: initial;
   padding: 1rem; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .ma-site-header {
       padding: 1rem 2rem; } }
   .ma-site-header a {
