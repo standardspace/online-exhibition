@@ -4057,12 +4057,11 @@ html {
 .ma-artist-page__portrait {
   z-index: 1;
   margin: 0 -1rem;
-  position: relative;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%; }
+  position: relative; }
   @media (min-width: 768px) {
     .ma-artist-page__portrait {
-      margin: 0; }
+      margin: 0;
+      width: calc(100% + 2rem); }
       .ma-artist-page__portrait:after {
         content: "";
         position: absolute;
@@ -4090,9 +4089,8 @@ html {
       .ma-artist-page__portrait img {
         aspect-ratio: 5 / 3; } }
 
-.ma-artist-page__bio {
+.ma-artist-page__text {
   position: relative;
-  max-width: 65ch;
   background: #efefef;
   background: linear-gradient(225deg, transparent 2rem, #efefef 2rem);
   color: #000000;
@@ -4103,24 +4101,22 @@ html {
   height: -moz-max-content;
   height: max-content; }
   @media (min-width: 768px) {
-    .ma-artist-page__bio {
-      -ms-flex-preferred-size: 80%;
-          flex-basis: 80%;
+    .ma-artist-page__text {
       margin: -5rem 2rem 1rem 2rem;
       padding: 2rem; } }
   @media (min-width: 992px) {
-    .ma-artist-page__bio {
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
+    .ma-artist-page__text {
+      width: calc(50% - 4rem);
       margin: -10rem 2rem 1rem 3rem;
       padding: 2rem; } }
-  .ma-artist-page__bio > * {
+  .ma-artist-page__text > * {
     margin-top: 0; }
+  .ma-artist-page__text p {
+    max-width: 65ch; }
 
 @media (min-width: 992px) {
   .ma-artist-page__artworks {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%; } }
+    width: calc(50% - 4rem); } }
 
 .ma-artist-page__artwork {
   display: -webkit-box;

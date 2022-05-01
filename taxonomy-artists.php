@@ -17,12 +17,33 @@
 		<?php endif; ?>
 
 		<?php 
-			$description = get_field('biography', $term->taxonomy . '_' . $term->term_id);
-			if ($description) {
-					echo '<div class="ma-artist-page__bio">';
-					echo $description;
-					echo '</div>';
-			} 
+			$biography = get_field('biography', $term->taxonomy . '_' . $term->term_id);
+			$statement = get_field('statement', $term->taxonomy . '_' . $term->term_id);
+			$interview = get_field('interview', $term->taxonomy . '_' . $term->term_id);
+			if ( $biography || $statement || $interview ){
+				echo '<div class="ma-artist-page__text">';
+					if ($biography) {
+							echo '<div class="ma-artist-page__bio">';
+								echo $biography;
+							echo '</div>';
+					} 
+
+					if ($statement) {
+							echo '<div class="ma-artist-page__statement">';
+								echo '<h2>Statement</h2>';
+								echo $statement;
+							echo '</div>';
+					}
+
+					if ($interview) {
+							echo '<div class="ma-artist-page__interview">';
+								echo '<h2>Interview</h2>';
+								echo $interview;
+							echo '</div>';
+					}
+				echo '</div>';
+			}
+
 
 			// Featured artwork
 			// $featuredArtwork = get_field('featured_artwork', $term->taxonomy . '_' . $term->term_id);

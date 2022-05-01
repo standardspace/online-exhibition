@@ -17,10 +17,10 @@
     z-index: 1;
     margin: 0 -1rem;
     position: relative;
-    flex-basis: 100%;
 
     @include media-breakpoint-up(md) {
       margin: 0;
+      width: calc(100% + 2rem);
 
       &:after {
         content: "";
@@ -55,9 +55,8 @@
 
   }
 
-  .ma-artist-page__bio {
+  .ma-artist-page__text {
     position: relative;
-    max-width: 65ch;
     background: $card-bg;
     background: linear-gradient(225deg, transparent 2rem, $card-bg 2rem);
     color: $card-txt-color;
@@ -67,13 +66,12 @@
     height: max-content;
 
     @include media-breakpoint-up(md) {
-      flex-basis: 80%;
       margin: -5rem 2rem 1rem 2rem;
       padding: 2rem;
     }
 
     @include media-breakpoint-up(lg) {
-      flex-basis: 50%;
+      width: calc(50% - 4rem);
       margin: -10rem 2rem 1rem 3rem;
       padding: 2rem;
     }
@@ -81,11 +79,15 @@
     > * {
       margin-top: 0;
     }
+
+    p {
+      max-width: 65ch;
+    }
   }
 
   .ma-artist-page__artworks {
     @include media-breakpoint-up(lg) {
-      flex-basis: 40%;
+      width: calc(50% - 4rem);
     }
   }
 

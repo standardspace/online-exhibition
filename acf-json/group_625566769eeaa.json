@@ -46,6 +46,44 @@
             "delay": 0
         },
         {
+            "key": "field_626e8576f9754",
+            "label": "Statement",
+            "name": "statement",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_626e9bd2d8618",
+            "label": "Interview",
+            "name": "interview",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_625e8f488c548",
             "label": "Featured artwork",
             "name": "featured_artwork",
@@ -86,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651409967
+    "modified": 1651416030
 }
