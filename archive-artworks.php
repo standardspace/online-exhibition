@@ -11,6 +11,7 @@
 			data-title="<?php the_title(); ?>"
 			data-artist="<?= $artist->name ?>"
 			data-artist-url="<?= home_url(); ?>/<?= $artist->taxonomy ?>/<?= $artist->slug ?>/"
+			data-post-id="<?= $post->ID ?>"
 			data-image-full="<?php the_post_thumbnail_url('large'); ?>"
 		>
 			<h2 class="ma-gallery__item__title">

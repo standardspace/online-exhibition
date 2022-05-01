@@ -63,10 +63,11 @@ if (maGallery) {
     const itemLink = item.querySelector('.ma-gallery__item__link').getAttribute('href');
     const itemArtist = item.dataset.artist;
     const itemArtistUrl = item.dataset.artistUrl;
+    const itemPostId = item.dataset.postId
 
     // Get a link and add
     modalArtworks += `
-    <li class="ma-gallery-scroller__item" id="ma-gallery-scroll-item-${idx}">
+    <li class="ma-gallery-scroller__item" id="ma-gallery-scroll-item-${idx}" data-post-id="${itemPostId}">
       <figure class="ma-gallery-scroller__item__figure">
         <img class="ma-gallery-scroller__item__image" src="${imageFullPath}" alt="Artwork: ${itemTitle}" />
         <figcaption class="ma-gallery-scroller__item__title">
@@ -178,6 +179,11 @@ if (maGallery) {
               buttonPrev.disabled = true;
               buttonNext.disabled = false;
             }
+
+            // Update url hash
+            const itemPostId = item.dataset.postId
+            // history.pushState(null, null, '#item-' + itemPostId);
+            history.replaceState(null, null, '#item-' + itemPostId)
           }
         })
 
@@ -201,7 +207,7 @@ if (maGallery) {
 
     const itemButton = itemHeading.querySelector('.ma-gallery__item__button')
 
-    itemButton.onclick = (event) => {
+    itemButton.onclick = () => {
 
       const itemIndex = galleryItem.dataset.itemIndex;
       const targetItem = document.getElementById('ma-gallery-scroll-item-' + itemIndex)
@@ -218,11 +224,23 @@ if (maGallery) {
       // Scroll to clicked item
       targetItem.scrollIntoView();
 
-      // Disable previous button first item
+      // Disable previous button if first item
       if (itemIndex == 0) {
         buttonPrev.disabled = true
       }
     }
 
   })
+
+  // Open on hash link
+  if (window.location.hash && window.location.hash.startsWith('#item-')) {
+    const itemToOpenPostId = window.location.hash.replace('#item-', '');
+    const itemToOpen = document.querySelector(`[data-post-id="${itemToOpenPostId}"]`);
+    const itemToOpenButton = itemToOpen.querySelector('button');
+    // Button focus 
+    itemToOpenButton.focus();
+    // Button click
+    itemToOpenButton.click();
+  }
 }
+
