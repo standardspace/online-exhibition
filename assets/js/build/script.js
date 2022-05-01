@@ -69,7 +69,7 @@ if (maGallery) {
     modalArtworks += `
     <li class="ma-gallery-scroller__item" id="ma-gallery-scroll-item-${idx}" data-post-id="${itemPostId}">
       <figure class="ma-gallery-scroller__item__figure">
-        <img class="ma-gallery-scroller__item__image" src="${imageFullPath}" alt="Artwork: ${itemTitle}" />
+        <img class="ma-gallery-scroller__item__image" src="${imageFullPath}" alt="Artwork: ${itemTitle}" loading="lazy" />
         <figcaption class="ma-gallery-scroller__item__title">
           <a href="${itemLink}">${itemTitle}</a> 
           by <a href="${itemArtistUrl}">${itemArtist}</a>
@@ -192,6 +192,12 @@ if (maGallery) {
     }, false);
   })
 
+  dialog.on('hide', () => {
+    console.log('dialog closed');
+    location.hash = ""
+    history.replaceState("", "", location.pathname)
+  })
+
 
   galleryItems.forEach( (galleryItem, idx) => {
 
@@ -236,11 +242,14 @@ if (maGallery) {
   if (window.location.hash && window.location.hash.startsWith('#item-')) {
     const itemToOpenPostId = window.location.hash.replace('#item-', '');
     const itemToOpen = document.querySelector(`[data-post-id="${itemToOpenPostId}"]`);
-    const itemToOpenButton = itemToOpen.querySelector('button');
-    // Button focus 
-    itemToOpenButton.focus();
-    // Button click
-    itemToOpenButton.click();
+
+    if (itemToOpen) {
+      const itemToOpenButton = itemToOpen.querySelector('button');
+      // Button focus 
+      itemToOpenButton.focus();
+      // Button click
+      itemToOpenButton.click();
+    }
   }
 }
 
