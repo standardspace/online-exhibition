@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_625566817e14a",
-            "label": "portrait",
+            "label": "Portrait",
             "name": "portrait",
             "type": "image",
             "instructions": "Portrait photograph of artist",
@@ -51,7 +51,7 @@
             "name": "statement",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -70,7 +70,7 @@
             "name": "interview",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -124,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651416030
+    "modified": 1651482969
 }
