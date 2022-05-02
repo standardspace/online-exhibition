@@ -34,5 +34,8 @@
 		"last 2 version",
 		"> 1%",
 		"IE 10"
-	]
+	],
+	"dependencies": {
+		"lays.js": "^1.1.1"
+	}
 }

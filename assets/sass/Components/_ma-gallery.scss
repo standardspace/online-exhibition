@@ -1,8 +1,8 @@
 .ma-gallery {
   list-style: none;
-  margin: 0;
+  margin: 0 -2rem;
   padding: 0;
-  max-width: 100vw;
+  max-width: 100%;
 
 
   @include media-breakpoint-up(sm) {
@@ -28,7 +28,11 @@
 }
 
   .ma-gallery__item {
+    box-sizing: border-box;
     max-width: 100%;
+    padding: 1rem;
+    // margin: 1rem;
+    // padding: 1rem;
 
     img {
       max-width: 100%;

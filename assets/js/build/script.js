@@ -1,5 +1,6 @@
 // Go wild...
-import Macy from "macy";
+// import Macy from "macy";
+import Lays from 'lays.js'
 import A11yDialog from 'a11y-dialog';
 var inViewport = require('in-viewport');
 
@@ -8,28 +9,41 @@ const maGallery = document.querySelector('.ma-gallery');
 if (maGallery) {
 
   // Grid the gallery
-  const maGalleryGrid = Macy({
-    container: maGallery,
-    trueOrder: true,
-    waitForImages: false,
-    mobileFirst: true,
-    margin: 8,
-    columns: 1,
-    breakAt: {
-      520: {
-        margin: 16,
-        columns: 2
+  // const maGalleryGrid = Macy({
+  //   container: maGallery,
+  //   trueOrder: true,
+  //   waitForImages: false,
+  //   mobileFirst: true,
+  //   margin: 8,
+  //   columns: 1,
+  //   breakAt: {
+  //     520: {
+  //       margin: 16,
+  //       columns: 2
+  //     },
+  //     1024: {
+  //       margin: 32,
+  //       columns: 3
+  //     },
+  //     1440: {
+  //       margin: 48,
+  //       columns: 4
+  //     }
+  //   }
+  // });
+
+    const lays = Lays({
+      parent: maGallery, 
+      prependItems: false,
+      maxItems: Infinity,
+      breakpoints: {
+        576: 2,
+        768: 2,
+        992: 3,
+        1200: 4
       },
-      1024: {
-        margin: 32,
-        columns: 3
-      },
-      1440: {
-        margin: 48,
-        columns: 4
-      }
-    }
-  });
+    });
+    lays.render();
 
   // Gallery modal
   const galleryItems = maGallery.querySelectorAll('.ma-gallery__item');
