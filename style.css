@@ -3620,9 +3620,10 @@ html {
       width: calc(100% - 4rem);
       max-width: 1600px;
       margin: 0 auto; } }
-  .home .ma-container {
-    max-width: 900px;
-    margin: 0 auto; }
+  @media (min-width: 1200px) {
+    .home .ma-container {
+      max-width: 900px;
+      margin: 0 auto; } }
 
 .ma-site-header {
   display: -webkit-box;
@@ -3893,6 +3894,7 @@ html {
   cursor: pointer; }
   .ma-gallery-scroller-nav__prev svg,
   .ma-gallery-scroller-nav__next svg {
+    position: absolute;
     width: 3rem;
     height: 3rem;
     fill: #666;

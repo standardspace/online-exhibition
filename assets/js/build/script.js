@@ -253,3 +253,102 @@ if (maGallery) {
   }
 }
 
+// Artwork series dialog
+
+var artworkSeriesDialogEl = document.getElementById('dialog-artwork-series')
+// var mainEl = document.querySelector('main')
+if (artworkSeriesDialogEl) {
+
+  var artworkSeriesDialog = new A11yDialog(artworkSeriesDialogEl, mainEl)
+
+  const buttonArtworkSeriesDialog = document.getElementById('dialog-artwork-series-open');
+
+  buttonArtworkSeriesDialog.addEventListener('click', () => {
+    artworkSeriesDialog.show();
+
+    // Re-enable buttons (they may have been disable in previous opening)
+    const buttonPrev = artworkSeriesDialogEl.querySelector('.ma-gallery-scroller-nav__prev');
+    const buttonNext = artworkSeriesDialogEl.querySelector('.ma-gallery-scroller-nav__next');
+    buttonPrev.disabled = false;
+    buttonNext.disabled = false;
+
+  })
+
+  artworkSeriesDialog.on('show', function (artworkSeriesDialogEl, triggerEl) {
+    // console.log(dialogEl)
+    // console.log(triggerEl)
+
+    const galleryScroller = artworkSeriesDialogEl.querySelector('.ma-gallery-scroller');
+    const galleryItems = galleryScroller.querySelectorAll('.ma-gallery-scroller__item');
+    // console.log(galleryScroller)
+
+    const buttonPrev = artworkSeriesDialogEl.querySelector('.ma-gallery-scroller-nav__prev');
+    const buttonNext = artworkSeriesDialogEl.querySelector('.ma-gallery-scroller-nav__next');
+
+    const navigateScroller = (evt, type) => {
+      galleryItems.forEach((item, idx) => {
+        let currentVisible = inViewport(item, {
+          container: galleryScroller,
+          offset: -100
+        });
+
+        if (currentVisible) {
+          const targetElIdx = (type === "next") ? idx + 1 : idx - 1;
+          galleryItems[targetElIdx].scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      })
+    }
+
+    buttonPrev.addEventListener("click", (evt) => {
+      navigateScroller(evt, 'prev')
+    })
+
+    buttonNext.addEventListener("click", (evt) => {
+      navigateScroller(evt, 'next')
+    })
+
+    // Listen for scroll events as we;ll need to 
+    // disable buttons when scroll reaches beginning or end
+    // Setup isScrolling variable
+    let isScrolling;
+    galleryScroller.addEventListener('scroll', function (event) {
+
+      // Clear our timeout throughout the scroll
+      window.clearTimeout(isScrolling);
+
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function () {
+
+        // Run the callback
+        galleryItems.forEach((item, idx) => {
+
+          let currentVisible = inViewport(item, {
+            container: galleryScroller,
+            offset: -100
+          });
+
+          if (currentVisible) {
+            console.log('true')
+            buttonPrev.disabled = false;
+            buttonNext.disabled = false;
+            // Disable button if reached beginning or end
+            if (galleryItems.length - 1 === idx) {
+              console.log('end of the line');
+              buttonPrev.disabled = false;
+              buttonNext.disabled = true;
+            } else if (idx === 0) {
+              console.log('start of the line');
+              buttonPrev.disabled = true;
+              buttonNext.disabled = false;
+            }
+          }
+        })
+
+      }, 66);
+
+    }, false);
+  })
+
+}

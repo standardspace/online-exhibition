@@ -21,7 +21,9 @@
 	}
 
 	.home & {
-		max-width: 900px;
-		margin: 0 auto;
+		@include media-breakpoint-up(xl) {
+			max-width: 900px;
+			margin: 0 auto;
+		}
 	}
 }
