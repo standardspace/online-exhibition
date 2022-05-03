@@ -1,20 +1,21 @@
 .ma-gallery {
   list-style: none;
-  margin: 0 -2rem;
+  margin: 2rem auto 0;
   padding: 0;
-  max-width: 100%;
+  max-width: 1800px;
 
 
   @include media-breakpoint-up(sm) {
-    margin: 1rem;
+    // margin: 1rem;
   }
 
   @include media-breakpoint-up(md) {
-    margin: 1rem;
+    // margin: 1rem;
   }
 
   @include media-breakpoint-up(lg) {
-    margin: 2rem;
+    // margin: 2rem;
+    margin-top: 2rem;
   }
 
   .js & {
@@ -30,9 +31,13 @@
   .ma-gallery__item {
     box-sizing: border-box;
     max-width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     // margin: 1rem;
     // padding: 1rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 1rem;
+    }
 
     img {
       max-width: 100%;

@@ -32,18 +32,18 @@ if (maGallery) {
   //   }
   // });
 
-    const lays = Lays({
-      parent: maGallery, 
-      prependItems: false,
-      maxItems: Infinity,
-      breakpoints: {
-        576: 2,
-        768: 2,
-        992: 3,
-        1200: 4
-      },
-    });
-    lays.render();
+  const lays = Lays({
+    parent: maGallery, 
+    prependItems: false,
+    maxItems: Infinity,
+    breakpoints: {
+      576: 2,
+      768: 2,
+      992: 3,
+      1200: 4
+    },
+  });
+  lays.render();
 
   // Gallery modal
   const galleryItems = maGallery.querySelectorAll('.ma-gallery__item');
