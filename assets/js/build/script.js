@@ -192,6 +192,9 @@ if (maGallery) {
               console.log('start of the line');
               buttonPrev.disabled = true;
               buttonNext.disabled = false;
+            } else {
+              buttonPrev.disabled = false;
+              buttonNext.disabled = false;
             }
 
             // Update url hash
@@ -340,13 +343,11 @@ if (artworkSeriesDialogEl) {
 
           let currentVisible = inViewport(item, {
             container: galleryScroller,
-            offset: -100
+            offset: -200
           });
 
           if (currentVisible) {
-            console.log('true')
-            buttonPrev.disabled = false;
-            buttonNext.disabled = false;
+
             // Disable button if reached beginning or end
             if (galleryItems.length - 1 === idx) {
               console.log('end of the line');
@@ -355,6 +356,9 @@ if (artworkSeriesDialogEl) {
             } else if (idx === 0) {
               console.log('start of the line');
               buttonPrev.disabled = true;
+              buttonNext.disabled = false;
+            } else {
+              buttonPrev.disabled = false;
               buttonNext.disabled = false;
             }
           }
