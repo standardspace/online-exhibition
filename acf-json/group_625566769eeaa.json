@@ -104,6 +104,38 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_627277cf0a488",
+            "label": "Instagram",
+            "name": "instagram",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_627277df0a489",
+            "label": "Website",
+            "name": "website",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -124,5 +156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651482969
+    "modified": 1651668979
 }

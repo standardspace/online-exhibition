@@ -20,10 +20,14 @@
 			$biography = get_field('biography', $term->taxonomy . '_' . $term->term_id);
 			$statement = get_field('statement', $term->taxonomy . '_' . $term->term_id);
 			$interview = get_field('interview', $term->taxonomy . '_' . $term->term_id);
-			if ( $biography || $statement || $interview ){
+			$insta = get_field('instagram', $term->taxonomy . '_' . $term->term_id);
+			$website = get_field('website', $term->taxonomy . '_' . $term->term_id);
+
+			if ( $biography || $statement || $interview ) {
 				echo '<div class="ma-artist-page__text">';
 					if ($biography) {
 							echo '<div class="ma-artist-page__bio">';
+								echo '<h2>Biography</h2>';
 								echo $biography;
 							echo '</div>';
 					} 
@@ -40,6 +44,18 @@
 								echo '<h2>Interview</h2>';
 								echo $interview;
 							echo '</div>';
+					}
+
+					if ($insta || $website ) {
+						echo '<h2>Artist&apos;s Links</h2>';
+						echo '<ul class="ma-artist-page__artist-links">';
+						if ($insta) {
+							echo '<li><a href="' . $insta . '">Instagram</a></li>';
+						}
+						if ($website) {
+							echo '<li><a href="' . $website . '">Website</a></li>';
+						}
+						echo '</ul>';
 					}
 				echo '</div>';
 			}
