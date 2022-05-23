@@ -31,6 +31,7 @@
         <ul>
             <li><a href="<?php echo get_bloginfo( 'url' ); ?>/artists/">Artists</a></li>
             <li><a href="<?php echo get_bloginfo( 'url' ); ?>/artworks/">Gallery</a></li>
+            <li><a href="<?php echo get_bloginfo( 'url' ); ?>/event/">Events</a></li>
         </ul>
     </nav>
 </header>

@@ -1,0 +1,58 @@
+{
+    "key": "group_628b7a4183b19",
+    "title": "Event details",
+    "fields": [
+        {
+            "key": "field_628b7a4d463d2",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "Pick event date",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_628b7a7be01ca",
+            "label": "Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "Link to address eg on Instagram TV or EventBright",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1653308491
+}
